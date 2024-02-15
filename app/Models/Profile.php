@@ -18,11 +18,8 @@ class Profile extends Model
     ];
 
 
-    protected $guarded = [];
-
-
-    public function student(): BelongsTo
+    public function student()
     {
-        return $this->belongsTo(\App\Models\Student::class);
+        return $this->belongsTo(Student::class);
     }
 }

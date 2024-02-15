@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use App\Models\Student;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,10 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //
+        $data = Profile::with('student')->find(7);
+
+        echo $data->student->first_name;
+        echo $data->student->last_name;
     }
 
     /**
@@ -32,6 +36,7 @@ class StudentController extends Controller
         $student->first_name = $request->first_name;
         $student->last_name = $request->last_name;
         $student->save();
+        return redirect(route('student.index'));
 
     }
 
