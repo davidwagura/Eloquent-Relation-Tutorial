@@ -9,6 +9,8 @@ class Profile extends Model
 {
     use HasFactory;
 
+    protected $table = 'profile';
+
     protected $fillable = [
         'student_id',
         'email',
@@ -21,6 +23,6 @@ class Profile extends Model
 
     public function students()
     {
-        return $this->belongsTo(\App\Student::class);
+        return $this->belongsTo(\App\Models\Student::class);
     }
 }

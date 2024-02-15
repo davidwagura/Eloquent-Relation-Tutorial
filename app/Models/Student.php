@@ -9,6 +9,8 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $table = 'student';
+
     protected $fillable = [
         'first_name',
         'last_name',
@@ -19,6 +21,6 @@ class Student extends Model
 
     public function profile()
     {
-        return $this->hasOne(\App\Profile::class);
+        return $this->hasOne(\App\Models\Profile::class);
     }
 }

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Profile;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -19,7 +20,7 @@ class ProfileController extends Controller
      */
     public function create()
     {
-        //
+        return view('profile.create');
     }
 
     /**
@@ -27,7 +28,11 @@ class ProfileController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $profile = new Profile;
+        $profile->student_id = $request->student_id;
+        $profile->email = $request->email;
+        $profile->phone = $request->phone;
+        $profile->save();
     }
 
     /**
