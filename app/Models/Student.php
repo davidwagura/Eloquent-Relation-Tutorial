@@ -19,8 +19,8 @@ class Student extends Model
 
     protected $guarded = [];
 
-    public function profile()
+    public function profile(): HasOne
     {
-        return $this->hasOne(\App\Models\Profile::class);
+        return $this->hasOne(\App\Models\Profile::class) ;
     }
 }

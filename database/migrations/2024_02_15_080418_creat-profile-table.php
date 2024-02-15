@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('email');
             $table->integer('phone');
             $table->timestamps();
+            $table->foreignId('student_id')->constrained('student')->onUpdate('cascade')->onDelete('cascade');
         });
 
     }

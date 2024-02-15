@@ -21,7 +21,7 @@ class Profile extends Model
     protected $guarded = [];
 
 
-    public function students()
+    public function student(): BelongsTo
     {
         return $this->belongsTo(\App\Models\Student::class);
     }
